@@ -19,8 +19,17 @@ int main(int argc, char ** argv) {
     Vehicle * vehicle = getter->getVehicle();
     // obtain control authority
     vehicle->obtainCtrlAuthority(functionTimeOut);
-    //
 
+
+    // let we start takeoff
+    bool is_success_takeoff = monitoredTakeoff(vehicle,functionTimeOut);
+    if(is_success_takeoff) {
+        // let we start landing
+        bool is_landing = monitoredLanding(vehicle,functionTimeOut);
+        if(is_landing) {
+            std::cout << "landing success" << std::endl;
+        }
+    }
 
 
 
