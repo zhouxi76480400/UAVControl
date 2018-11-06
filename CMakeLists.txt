@@ -50,6 +50,8 @@ add_executable(UAVControl main.cpp
         uav_error_code/UAVErrorCode.h
         SingleInstanceGetter.cpp
         SingleInstanceGetter.h
+        flight_control/flight_control.cpp
+        flight_control/flight_control.h
         )
 
 target_link_libraries(UAVControl ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libdjiosdk-core.a)

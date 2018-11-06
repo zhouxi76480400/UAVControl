@@ -4,7 +4,7 @@
 #import "uav_error_code/UAVErrorCode.h"
 #import "SingleInstanceGetter.h"
 
-#import "dji_gimbal.hpp"
+#import "flight_control/flight_control.h"
 
 using namespace DJI::OSDK;
 using namespace DJI::OSDK::Telemetry;
@@ -20,6 +20,7 @@ int main(int argc, char ** argv) {
     // obtain control authority
     vehicle->obtainCtrlAuthority(functionTimeOut);
     //
+
 
 
 
