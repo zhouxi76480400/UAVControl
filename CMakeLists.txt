@@ -12,6 +12,7 @@ include_directories(include/osdk-core/protocol/inc)
 include_directories(include/osdk-core/platform/linux/inc)
 include_directories(include/osdk-core/platform/manifold/inc)
 include_directories(./common)
+include_directories(include)
 
 if((CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64|AMD64") AND (CMAKE_SIZEOF_VOID_P EQUAL 8))
     set(TARGET_ARCH "x86_64")
@@ -52,6 +53,15 @@ add_executable(UAVControl main.cpp
         SingleInstanceGetter.h
         flight_control/flight_control.cpp
         flight_control/flight_control.h
+        process_data_connect/UDPServer.h
+        process_data_connect/UDPServer.cpp
+        task_queue/TaskQueue.cpp
+        task_queue/TaskQueue.h
+        task_queue/Task.cpp
+        task_queue/Task.h
         )
 
-target_link_libraries(UAVControl ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libdjiosdk-core.a)
+target_link_libraries(UAVControl
+        ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libdjiosdk-core.a
+        ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libDJI_guidance.so
+        )
