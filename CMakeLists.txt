@@ -63,5 +63,4 @@ add_executable(UAVControl main.cpp
 
 target_link_libraries(UAVControl
         ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libdjiosdk-core.a
-        ${CMAKE_SOURCE_DIR}/libs/${LIB_PATH}/libDJI_guidance.so
         )

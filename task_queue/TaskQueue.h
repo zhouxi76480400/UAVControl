@@ -5,25 +5,30 @@
 #ifndef UAVCONTROL_TASKQUEUE_H
 #define UAVCONTROL_TASKQUEUE_H
 
-
-# include <atomic>
-
 #include <vector>
 #include "Task.h"
 
+using namespace std;
+
+
+// task list
+static vector<Task *> task_vector = vector<Task *>();
+
+
+// locks
+static bool is_write_thread_used = false;
+
+static bool is_read_thread_used = false;
+
 class TaskQueue {
-
 public:
-    // task list
-    static std::vector<Task *> vector();
-
-    // locks
-    static std::atomic<bool> is_write_thread_used;
-
-    static std::atomic<bool> is_read_thread_used;
-
+    static void addTask(Task newTask);
 };
 
+// methods
+//static void addTask(Task newTask);
+
+static void deleteTask(Task existsTask);
 
 
 #endif //UAVCONTROL_TASKQUEUE_H

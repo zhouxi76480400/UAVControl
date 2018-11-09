@@ -8,7 +8,8 @@
 #include <iostream>
 
 class Task {
-
+public:
+    int id;
 };
 
 /**

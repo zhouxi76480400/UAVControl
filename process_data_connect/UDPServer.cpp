@@ -50,5 +50,8 @@ void UDPServer::startServer() {
         ssize_t read_size = recvfrom(server_fd,buff,IN_BUFFER_LEN,0,(struct sockaddr*)&src, &len);
         createNewTask(buff,read_size);
         std::cout << "udp server get data:"<< std::endl << buff << std::endl;
+//        std::cout << is_read_thread_used << std::endl;
+//        std::cout << is_write_thread_used << std::endl;
+//        TaskQueue::addTask(Task());
     }
 }

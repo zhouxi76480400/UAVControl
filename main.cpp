@@ -7,7 +7,6 @@
 
 #include "flight_control/flight_control.h"
 
-#include "DJI_guidance.h"
 
 #include "process_data_connect/UDPServer.h"
 #include <thread>
